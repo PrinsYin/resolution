@@ -1,0 +1,145 @@
+kill(C,A)|kill(B,A)|kill(A,A)
+hate(x,A)|!kill(x,A)
+!hate(C,x)|!hate(A,x)
+hate(A,A)
+hate(A,C)
+rich(x,A)|hate(B,x)
+!hate(A,x)|hate(B,x)
+!hate(A,A)|!hate(A,B)|!hate(A,C)
+!hate(B,A)|!hate(B,B)|!hate(B,C)
+!hate(C,A)|!hate(C,B)|!hate(C,C)
+!rich(x,A)|!kill(x,A)
+
+
+
+
+请输入所有的变量名（变量名间以空格隔开，输入结束后以“空格#”结尾）
+本题可以直接复制下面的示例：
+x #
+x #
+请输入所有的常量名（常量名间以空格隔开，输入结束后以“空格#”结尾）
+本题可以直接复制下面的示例：
+A B C #
+A B C #
+
+*****************************
+请输入所有的Horn子句(|代表或，!代表非)，单个子句内部不可包含空格或Tab键,输入后以另起一行#结尾
+本题可以直接复制下面的示例：
+kill(C,A)|kill(B,A)|kill(A,A)
+hate(x,A)|!kill(x,A)
+!hate(C,x)|!hate(A,x)
+hate(A,A)
+hate(A,C)
+rich(x,A)|hate(B,x)
+!rich(x,A)|!hate(B,x)
+hate(A,x)|!hate(B,x)
+!hate(A,x)|hate(B,x)
+!hate(A,A)|!hate(A,B)|!hate(A,C)
+!hate(B,A)|!hate(B,B)|!hate(B,C)
+!hate(C,A)|!hate(C,B)|!hate(C,C)
+!rich(x,A)|!kill(x,A)
+#
+
+*****************************
+请输入猜测的结论(一个原子句)
+本题可以直接复制下面的示例：
+kill(A,A)
+
+*****************************
+将已输入的子句集进行如下的编号
+0:kill(C,A)|kill(B,A)|kill(A,A)
+1:hate(x,A)|!kill(x,A)
+2:!hate(C,x)|!hate(A,x)
+3:hate(A,A)
+4:hate(A,C)
+5:rich(x,A)|hate(B,x)
+6:!rich(x,A)|!hate(B,x)
+7:hate(A,x)|!hate(B,x)
+8:!hate(A,x)|hate(B,x)
+9:!hate(A,A)|!hate(A,B)|!hate(A,C)
+10:!hate(B,A)|!hate(B,B)|!hate(B,C)
+11:!hate(C,A)|!hate(C,B)|!hate(C,C)
+12:!rich(x,A)|!kill(x,A)
+
+*****************************
+下面进行归结
+13:!hate(C,A)......... 3 & 2 归结而来
+14:hate(B,A)......... 3 & 8 归结而来
+15:!hate(A,B)|!hate(A,C)......... 3 & 9 归结而来
+16:!hate(C,C)......... 4 & 2 归结而来
+17:hate(B,C)......... 4 & 8 归结而来
+18:!hate(A,A)|!hate(A,B)......... 4 & 9 归结而来
+19:!hate(A,B)......... 4 & 15 归结而来
+20:!kill(C,A)......... 13 & 1 归结而来
+21:!rich(A,A)......... 14 & 6 归结而来
+22:hate(A,A)......... 14 & 7 归结而来
+23:!hate(B,B)|!hate(B,C)......... 14 & 10 归结而来
+24:!rich(C,A)......... 17 & 6 归结而来
+25:hate(A,C)......... 17 & 7 归结而来
+26:!hate(B,A)|!hate(B,B)......... 17 & 10 归结而来
+27:!hate(B,B)......... 17 & 23 归结而来
+28:!hate(B,B)......... 19 & 7 归结而来
+29:kill(B,A)|kill(A,A)......... 20 & 0 归结而来
+30:hate(B,A)......... 21 & 5 归结而来
+31:!hate(C,A)......... 22 & 2 归结而来
+32:!hate(A,B)|!hate(A,C)......... 22 & 9 归结而来
+33:!hate(A,B)......... 22 & 18 归结而来
+34:hate(B,C)......... 24 & 5 归结而来
+35:!hate(C,C)......... 25 & 2 归结而来
+36:!hate(A,A)|!hate(A,B)......... 25 & 9 归结而来
+37:!hate(A,B)......... 25 & 15 归结而来
+38:!hate(A,B)......... 25 & 32 归结而来
+39:rich(B,A)......... 27 & 5 归结而来
+40:rich(B,A)......... 28 & 5 归结而来
+41:!hate(A,B)......... 28 & 8 归结而来
+42:hate(A,A)......... 30 & 7 归结而来
+43:!hate(B,B)|!hate(B,C)......... 30 & 10 归结而来
+44:!hate(B,B)......... 30 & 26 归结而来
+45:!kill(C,A)......... 31 & 1 归结而来
+46:hate(A,C)......... 34 & 7 归结而来
+47:!hate(B,A)|!hate(B,B)......... 34 & 10 归结而来
+48:!hate(B,B)......... 34 & 23 归结而来
+49:!hate(B,B)......... 34 & 43 归结而来
+50:!hate(B,B)......... 39 & 6 归结而来
+51:!kill(B,A)......... 39 & 12 归结而来
+52:!hate(B,B)......... 40 & 6 归结而来
+53:!kill(B,A)......... 40 & 12 归结而来
+54:!hate(C,A)......... 42 & 2 归结而来
+55:!hate(A,B)|!hate(A,C)......... 42 & 9 归结而来
+56:!hate(A,B)......... 42 & 18 归结而来
+57:!hate(A,B)......... 42 & 36 归结而来
+58:kill(B,A)|kill(A,A)......... 45 & 0 归结而来
+59:!hate(C,C)......... 46 & 2 归结而来
+60:!hate(A,A)|!hate(A,B)......... 46 & 9 归结而来
+61:!hate(A,B)......... 46 & 15 归结而来
+62:!hate(A,B)......... 46 & 32 归结而来
+63:!hate(A,B)......... 46 & 55 归结而来
+64:kill(C,A)|kill(A,A)......... 51 & 0 归结而来
+65:kill(A,A)......... 51 & 29 归结而来
+
+*****************************
+成功归结出猜测的结论
+
+*****************************
+归结过程如下所示
+["hate",2,"kill",2,"rich",2]
+hate(A,C)  &  !hate(A,x)|hate(B,x)  ==>  hate(B,C)
+hate(A,A)  &  !hate(A,x)|hate(B,x)  ==>  hate(B,A)
+hate(B,A)  &  !hate(B,A)|!hate(B,B)|!hate(B,C)  ==>  !hate(B,B)|!hate(B,C)
+hate(B,C)  &  !hate(B,B)|!hate(B,C)  ==>  !hate(B,B)
+!hate(B,B)  &  rich(x,A)|hate(B,x)  ==>  rich(B,A)
+rich(B,A)  &  !rich(x,A)|!kill(x,A)  ==>  !kill(B,A)
+hate(A,A)  &  !hate(C,x)|!hate(A,x)  ==>  !hate(C,A)
+!hate(C,A)  &  hate(x,A)|!kill(x,A)  ==>  !kill(C,A)
+!kill(C,A)  &  kill(C,A)|kill(B,A)|kill(A,A)  ==>  kill(B,A)|kill(A,A)
+!kill(B,A)  &  kill(B,A)|kill(A,A)  ==>  kill(A,A)
+
+*****************************
+绘制出归结的树状结构
+'dot' 不是内部或外部命令，也不是可运行的程序
+或批处理文件。
+'tree.png' 不是内部或外部命令，也不是可运行的程序
+或批处理文件。
+
+G:\AI\实验三\hornresolution\Debug\hornresolution.exe (进程 5116)已退出，代码为 0。
+按任意键关闭此窗口. . .

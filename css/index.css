@@ -1,0 +1,142 @@
+@font-face {
+    font-family: font1; 
+    src: url(hwzs.TTF); 
+}
+
+
+.btnn
+{
+    float:left;
+    /* text-align: center; */
+    font-size:60px;
+    
+    position:absolute;
+    left:50%;
+    top:160px;
+    height:140px;
+    width:600px;
+    font-family: font1; 
+    transform:translateX(-50%);
+    z-index:999;
+}
+
+.info
+{
+    float:left;
+    /* text-align: center; */
+    font-size:20px;
+    height:25px;
+    position:absolute;
+    left:0%;
+    top:0px;
+    height:140px;
+    width:580px;
+    font-family: font1; 
+    z-index:199;
+}
+
+.intro
+{
+    float:left;
+    text-align: center;
+    font-size:40px;
+    position:absolute;
+    left:0px;
+    width:300px; 
+    height:250px;
+    background-color: aquamarine;
+    font-family: font1; 
+}
+
+.input
+{
+    float:left;
+    text-align: center;
+    font-size:40px;
+    position:absolute;
+    top:250px;
+    left:0px;
+    width:300px; 
+    height:60%;
+    background-color: blanchedalmond;
+    font-family: font1; 
+}
+
+.btn1
+{
+    float:left;
+    text-align: center;
+    font-size:27px;
+    position:absolute;
+    left:50%;
+    height:50px;
+    width:90px;
+    font-family: font1; 
+    transform:translateX(-50%);
+}
+
+.mutea
+{
+    float:left;
+    text-align: center;
+    font-size:27px;
+    position:absolute;
+    left:30%;
+    top:15px;
+    height:30px;
+    font-family: font1; 
+}
+
+
+.btn2
+{
+    padding-bottom: 20px;
+    float:left;
+    text-align: center;
+    font-size:27px;
+    position:absolute;
+    top:60px;
+    left:50%;
+    height:50px;
+    width:90px;
+    font-family: font1; 
+    z-index:999;
+    transform:translateX(-50%);
+}
+
+.board
+{
+    background-color:rgb(255, 255, 255);
+    z-index:999;
+    position:absolute;
+    top:270px;
+    left:50%;
+    transform:translateX(-50%);
+    /* border: 2px solid black; */
+    /* border-radius: 2px; */
+    /* box-shadow: 10px 10px 10px rgb(171, 171, 171); */
+}
+
+.test
+{
+    background-color:rgb(252, 104, 153);
+    height:50%;
+    width:50%;
+    z-index:999;
+}
+
+.img1
+{
+    position:absolute;
+    top:18px;
+    left:85px;
+    height:30px;
+}
+
+.img2
+{
+    position:absolute;
+    top:18px;
+    right:75px;
+    height:30px;
+}
