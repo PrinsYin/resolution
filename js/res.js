@@ -1,11 +1,6 @@
 
 // 列表放入列表，始终传递地址
-var result=[[2,1,1,1]]
-var si=1;
-var aaa=document.getElementById("aa")
-var saaa="";
-var list=[]
-var li=0
+
 // 四元组[a,b,c,d]表示类型,a,b,是否
 // kill(C,A)|kill(B,A)|kill(A,A)
 // hate(x,A)|!kill(x,A)
@@ -201,12 +196,14 @@ function gmain()
             if(si==sentence.length)
                 break;
             list.push(sentence[si])
+
             si++;
         }
         else
             ne--;
         var i=0;
         var ns=list[li-ne];
+        var inf=li-ne;
         // console.log(" "+ns)
         while(i<li-ne&&end==0)
         {
@@ -273,9 +270,15 @@ function gmain()
                 }
                 if(clist&&clist.length>0)
                 {
+                    tree[list.length]=[i,inf]
+                    // console.log(i,li,ne)
+                    cnum[i]++
+                    cnum[li-ne]++
                     ne++
                     saaa+=tostr(ns)+"+"+tostr(listi)+"->"+tostr(clist)
                     saaa+="<p>"
+                    
+                   
                     list.push(clist)
                     
                     // saaa+=("listed"+list);
@@ -285,7 +288,13 @@ function gmain()
                     {
                         // saaa+=tostr(ns)+"+"+tostr(listi)+"->"+tostr(clist)
                         console.log("successssssssssss"+clist)
+                        aaa.innerHTML='<div style="font-size:25px;">归结成功！结果为'+na[clist[0][1]-1]+"</div>"+saaa;
+                        console.log(list,tree)
+                        getsolve(list.length-1);
                         end=1
+                        drawTree ()
+                        
+                        
                         break;
                     }
                 }
@@ -305,8 +314,21 @@ function gmain()
 
             }
             // list=repeat(list)
-            aaa.innerHTML=saaa;
             i++;
         }
+    }
+    if(end==0)
+    {    aaa.innerHTML='<div style="font-size:25px;">归结失败！以下为过程：</div>'+saaa;
+    drawTree ()
+}
+}
+
+function getsolve(i)
+{
+    solvelist.push(i)
+    if(tree[i])
+    {
+        getsolve(tree[i][0])
+        getsolve(tree[i][1])
     }
 }

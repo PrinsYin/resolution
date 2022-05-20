@@ -9,19 +9,51 @@
     <title>子句归结</title>
     <link rel="shortcut icon" href="media/1.svg">
 </head>
-<body onload="main()">
+<body onload="inistr3()">
+<!-- <body> -->
     <!-- <embed height="0" width="0" src="media/chess.mp3"> -->
         <div class="intro">
-
+            子句归结
+            <br>
+            尹卓然
         </div>
+        <div class="info" id="aa">
+      </div>
         <div class="input">
-
+            <form class="form-horizontal" style="padding-top: 3px;" name="typestate">
+                <div class="form-group" style="font-family:font1; font-size:18px;">
+                    输入常量名
+                    <br>
+                    <input type="text" class="form-block" id="str1" value="A B C">
+                  </div>
+                  <div class="form-group" style="font-family:font1; font-size:18px;">
+                    输入变量名
+                    <br>
+                    <input type="text" class="form-block" id="str2" value="x">
+                  </div>
+                  <div class="form-group" style="font-family:font1; font-size:18px;">
+                    输入子句
+                    <br>
+                    <textarea type="textarea" class="form-block texta" id="str3">
+kill C A |kill B A |kill A A \nhate x A |!kill x A \n!hate C x |!hate A x \nhate A A \nhate A C \nrich x A |hate B x \n!hate A x |hate B x \n!hate A A |!hate A B |!hate A C \n!hate B A |!hate B B |!hate B C \n!hate C A |!hate C B |!hate C C \n!rich x A |!kill x A
+                        </textarea>
+                    
+                  </div>
+                  <div class="form-group" style="font-family:font1; font-size:18px;">
+                    输入要推理的问题
+                    <input type="text" class="form-block" id="str4" value="kill x A">
+                  </div>
+                      <button class="btn btn-info subbutton" type="button" onclick="loaddata()">生成!</button>
+                </form>
         </div>
-        <div id="aa" class="info">
+        <div id="tree" class="tree">
         </div>
 
-    <script src="js/config.js"></script> 
+    <script src="js/svg-pan-zoom.min.js"></script>
+    <script src="js/viz.min.js"></script>
     <script src="js/init.js"></script> 
-    <script src="js/res.js"></script>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+    <script src="js/res.js"></script>      
+    <script src="js/tree.js"></script>         
+    <script src="js/draw.js"></script>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
 </body>
 </html>

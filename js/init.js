@@ -5,9 +5,16 @@ var str1,str2,str3,str4
 var string="kill(C,A)|kill(B,A)|kill(A,A)hate(x,A)|!kill(x,A)!hate(C,x)|!hate(A,x)hate(A,A)hate(A,C)rich(x,A)|hate(B,x)!hate(A,x)|hate(B,x)!hate(A,A)|!hate(A,B)|!hate(A,C)!hate(B,A)|!hate(B,B)|!hate(B,C)!hate(C,A)|!hate(C,B)|!hate(C,C)!rich(x,A)|!kill(x,A)"
 var sentence
 =[]
+var result
+var si=1;
+var aaa=document.getElementById("aa")
+var saaa="";
+var list=[]
+var li=0
 var na=[]
 var va=[]
 var word=[]
+var solvelist=[]
 var sss=
 [[[0,3,1,1],[0,2,1,1],[0,1,1,1]],
 [[1,0,1,1],[0,0,1,0]],
@@ -25,7 +32,13 @@ str1="A B C"
 str2="x"
 str3="kill C A |kill B A |kill A A \nhate x A |!kill x A \n!hate C x |!hate A x \nhate A A \nhate A C \nrich x A |hate B x \n!hate A x |hate B x \n!hate A A |!hate A B |!hate A C \n!hate B A |!hate B B |!hate B C \n!hate C A |!hate C B |!hate C C \n!rich x A |!kill x A "
 str4="kill x A"
+var tree=[]
+// tree[0]=-1
+// tree[1]=-1
+var cnum=[]
 var end=0
+
+
 function main()
 {
 
@@ -80,10 +93,16 @@ function main()
         list.push([word.length,0,1,1])
     }
     sentence.push(list)
+    // for(var i=0;i<sentence.length;i++)
+    //     tree[i]=-1;
+
     console.log("sentence",sentence)
     console.log( na,va,word)
     end=0
+    console.log(sentence)
+    console.log("word3"+word[3])
     gmain()
+    
 }
 
 function tostr(list)
@@ -110,5 +129,32 @@ function tostr(list)
             str1+="|"
         str+=str1
     }
+    // console.log(str)
     return str;
+}
+
+function loaddata()
+{
+    console.log("loaddata")
+    str1=document.getElementById("str1").value
+    str2=document.getElementById("str2").value
+    str3=document.getElementById("str3").value
+    str4=document.getElementById("str4").value
+    console.log(str1,str2,str3,str4)
+    sentence=[]
+    na=[]
+    va=[]
+    word=[]
+    solvelist=[]
+    tree=[]
+    cnum=[]
+    end=0
+    si=1;
+    list=[]
+    li=0
+    main()
+}
+function inistr3()
+{
+    document.getElementById("str3").value="kill C A |kill B A |kill A A \nhate x A |!kill x A \n!hate C x |!hate A x \nhate A A \nhate A C \nrich x A |hate B x \n!hate A x |hate B x \n!hate A A |!hate A B |!hate A C \n!hate B A |!hate B B |!hate B C \n!hate C A |!hate C B |!hate C C \n!rich x A |!kill x A "
 }
