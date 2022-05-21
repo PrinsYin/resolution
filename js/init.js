@@ -39,9 +39,9 @@ var cnum=[]
 var end=0
 
 
-function main()
+function main()//读取字符串内容，初始化变量并调用归结函数
 {
-
+    saaa=""
     na=str1.split(" ")
     va=str2.split(" ")
     str3=str3.split("\n")
@@ -105,7 +105,7 @@ function main()
     
 }
 
-function tostr(list)
+function tostr(list)//将数组表示的子句转化为字符串
 {
     var str="";
     for(var i=0;i<list.length;i++)
@@ -133,7 +133,7 @@ function tostr(list)
     return str;
 }
 
-function loaddata()
+function loaddata()//从网页读取数据
 {
     console.log("loaddata")
     str1=document.getElementById("str1").value
@@ -154,7 +154,7 @@ function loaddata()
     li=0
     main()
 }
-function inistr3()
+function inistr3()//初始化子句部分的内容
 {
     document.getElementById("str3").value="kill C A |kill B A |kill A A \nhate x A |!kill x A \n!hate C x |!hate A x \nhate A A \nhate A C \nrich x A |hate B x \n!hate A x |hate B x \n!hate A A |!hate A B |!hate A C \n!hate B A |!hate B B |!hate B C \n!hate C A |!hate C B |!hate C C \n!rich x A |!kill x A "
 }

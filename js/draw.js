@@ -7,7 +7,7 @@
 };
 
 
-function drawTree ()//画树
+function drawTree ()////调用graphviz将dot字符串转化为矢量图
  {
     var vizdata=getdot()
     const treeCanvas = document.getElementById('tree');

@@ -27,7 +27,7 @@ function createa(w, h) //辅助函数，用来创建高维数组
   return r
 }
 
-function repeat(arr)
+function repeat(arr)//清除数组重复元素
  {
     for (var i = 0; i < arr.length; i++) {
         for (var j = i + 1; j < arr.length; j++) {
@@ -42,7 +42,7 @@ function repeat(arr)
 
 // [[[2,3,1,1],[2,2,1,1],[2,1,1,1]], [[1,0,1,1],[2,0,1,0]]]
 
-function tell(sen)
+function tell(sen)//判断子句内容是否有效，即已有句子中包含此句
 {
     
     if(sen.length>4)
@@ -84,7 +84,7 @@ function tell(sen)
     return 0;
 }
 
-function guijie(l1,l2,l1l,l2l,fflag)
+function guijie(l1,l2,l1l,l2l,fflag)//归结两个子句
 {
     // saaa+=("list"+[].concat(list));
     // saaa+="<p>"
@@ -179,7 +179,7 @@ function guijie(l1,l2,l1l,l2l,fflag)
         
 }
 
-function gmain()
+function gmain()//选取两个子句进行归结
 {
     var ne=0;
     var count=0;
@@ -323,7 +323,7 @@ function gmain()
 }
 }
 
-function getsolve(i)
+function getsolve(i)//获得得到解序列的过程
 {
     solvelist.push(i)
     if(tree[i])

@@ -20,7 +20,7 @@
     left:15%;
     width:20%; 
     height:100%;
-    background-color: rgb(202, 255, 208);
+    background-color: blanchedalmond;
     font-family: font1; 
     z-index:999;
 }
@@ -35,7 +35,7 @@
     left:0px;
     width:15%; 
     height:15%;
-    background-color: aquamarine;
+    background-color: rgba(127, 255, 212, 0.601);
     font-family: font1; 
 }
 
@@ -49,7 +49,7 @@
     left:0px;
     width:15%; 
     height:85%;
-    background-color: blanchedalmond;
+    background-color: rgba(135, 206, 250, 0.312);
     font-family: font1; 
 }
 

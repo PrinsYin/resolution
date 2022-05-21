@@ -1,4 +1,4 @@
- function getdot()//将树转化为dot字符串
+ function getdot()//将归结树转化为dot字符串
  {
      var dot='digraph Tree {\nsplines="line";\nnode [shape = record, height = .1];\n'
      dot+="invis[width=0.1, height=0.1, shape=point, style=invis]"
@@ -31,23 +31,6 @@
      console.log(dot)
      return dot;
  }
-
-
-function drawTree ()//字符串存储在localstorage
- {
-    const vizData = getdot();
-    jsondata=JSON.stringify(vizData);
-	localStorage.setItem('viz',jsondata);  //对应方法2，将数据存储在HTML5的localStorage中。
-    console.log('vizData=',vizData)
-    // const treeCanvas = document.getElementById('tree');
-    // treeCanvas.innerHTML = Viz(vizData, "svg");
-    window.open("svg.html")
-    // document.getElementById('tree').childNodes[6].style.width="100%";
-    // document.getElementById('tree').childNodes[6].style.height="50%";
-    // document.getElementById('tree').childNodes[6].style.posotion="absolute";
-    // document.getElementById('tree').childNodes[6].style.top="20px";
-    // document.getElementById('graph0').style.top="0";
-};
 
 // digraph g {
 // splines="line";
